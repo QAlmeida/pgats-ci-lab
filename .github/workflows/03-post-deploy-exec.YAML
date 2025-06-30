@@ -7,7 +7,7 @@ name: 'Execução por Deploy'
 # gatilho de exec manual = workflow_dispatch
 # gatilho de exec agendada = schedule
 # gatilho de exec a partir de outro pipe = workflow_run
-#
+####
 
 on:
   workflow_run:
@@ -23,6 +23,11 @@ jobs:
 
     # maquina que o job vai executar
     runs-on: ubuntu-latest
+
+    # conditional - if
+    # `${ expressao }`
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
 
     # passos do script de build
