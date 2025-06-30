@@ -7,6 +7,7 @@ name: 'Execução por Deploy'
 # gatilho de exec manual = workflow_dispatch
 # gatilho de exec agendada = schedule
 # gatilho de exec a partir de outro pipe = workflow_run
+#
 
 on:
   workflow_run:
