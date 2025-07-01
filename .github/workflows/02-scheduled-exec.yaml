@@ -10,18 +10,16 @@ on:
   schedule:
     - cron: '0 6 * * 1'
 
-# a - minuto ; b - hora ; c - dia do mês ; d - mês ; e - dia da semana 
+# a - minuto ; b - hora ; c - dia do mês ; d - mês ; e - dia da semana
 # 'cron'
 # a b c d e
 # 0 6 * * 1 - Minuto zero, 6horas, todos os dias, todos os meses, começa na segunda  - rodar o regressivo toda segunda pela manha (crontab.guru)
 
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
-  e2e-tests: 
-
+  e2e-tests:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
-
 
     # passos do script de build
     steps:
@@ -43,8 +41,8 @@ jobs:
 
       # Instalação do Playwright
       - name: Instalando Playwright
-        run: yarn playwright install    
+        run: yarn playwright install
 
       # Executar os testes e2e
       - name: Executando Testes e2e
-        run: yarn run e2e    
+        run: yarn run e2e

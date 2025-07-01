@@ -9,14 +9,11 @@ name: 'Execução Manual'
 on:
   workflow_dispatch:
 
-
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
-  e2e-tests: 
-
+  e2e-tests:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
-
 
     # passos do script de build
     steps:
@@ -38,8 +35,8 @@ jobs:
 
       # Instalação do Playwright
       - name: Instalando Playwright
-        run: yarn playwright install    
+        run: yarn playwright install
 
       # Executar os testes e2e
       - name: Executando Testes e2e
-        run: yarn run e2e    
+        run: yarn run e2e
